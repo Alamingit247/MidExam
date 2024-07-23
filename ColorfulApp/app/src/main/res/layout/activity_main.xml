@@ -1,0 +1,101 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/constraintLayout"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/verticalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/optionsSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintVertical_bias="0.1">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scrollbarStyle="insideInset"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Welcome to Colorful App!"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:scrollHorizontally="true" />
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <Spinner
+        android:id="@+id/optionsSpinner"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/colorSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verticalScrollView"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <Spinner
+        android:id="@+id/colorSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/optionsSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editText"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Edit TextView"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/optionsSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonCompleteTask"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <Button
+        android:id="@+id/buttonCompleteTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complete Task"
+        app:layout_constraintTop_toBottomOf="@+id/colorSpinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/enjoyView"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/enjoyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enjoy app with your favourit color!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonCompleteTask" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
